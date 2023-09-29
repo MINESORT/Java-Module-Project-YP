@@ -18,6 +18,7 @@ public class Calculator {
           while (true){
             System.out.println("Напишите название товара:");
             String tovar = scan.next();
+
             calcul = calcul + " " + tovar;
 
             System.out.println("Напишите стоимость товара (руб.коп.):");

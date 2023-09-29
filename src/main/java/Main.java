@@ -6,6 +6,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+
         // метод проверки данных пользователя
         while(true){
             int number = scan.nextInt();
