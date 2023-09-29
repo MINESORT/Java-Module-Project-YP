@@ -6,6 +6,7 @@ public class Calculator {
         String soglasie;
         String calcul = "Ваши товары: ";
         Float sum = 0.00f;
+
         Scanner scan = new Scanner(System.in);
         //System.out.println("Напишите название товара:");
         //String tovar = scan.next();
