@@ -25,6 +25,7 @@ public class Calculator {
             float cena = scan.nextFloat();
             sum = sum + cena;
 
+
             System.out.println("Хотите заказать ещё? тогда напшите любой символ. Напишите: Завершить, если всё заказали");
             soglasie = scan.next();
             if (soglasie.equals("Завершить")){
