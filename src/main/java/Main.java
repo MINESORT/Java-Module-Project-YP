@@ -4,18 +4,22 @@ public class Main {
 
         System.out.println("На скольких человек необходимо разделить счёт?");
         Scanner scan = new Scanner(System.in);
-        // метод проверки данных пользователя
 
-        while(true){
-
-            int number = scan.nextInt();
-            if (number <=1){
-                System.out.println("Количество человек должно превышать 1. Повторите запрос.");
-            }else break;
-
-        }
-
+        boolean wenttocatch = false;
+        int number = 2;
+        do{
+            System.out.print("Введите число : ");
+            if(scan.hasNextInt()){
+                number= scan.nextInt();
+                if(number>=2){
+                wenttocatch = true;}else System.out.println("Ошибка! Введите число больше 1: ");
+            }else{
+                scan.nextLine();
+                System.out.println("Ошибка! Неккоректное число, введите еще раз: ");
+            }
+        }while(!wenttocatch);
         System.out.println("ПРОШЛО");
+        // Vvod.proverkaOshibokTovar();
         Calculator.calculation();
     }
 }

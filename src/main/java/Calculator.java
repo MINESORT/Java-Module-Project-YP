@@ -12,6 +12,7 @@ public class Calculator {
         Float cena = -10.00f;
         double count = 10;
         String tovar=" ";
+
         Scanner scan = new Scanner(System.in);
         while (true) {
          //   if (cena instanceof Float & cena>=0) {
@@ -23,13 +24,14 @@ public class Calculator {
 
 
 
-            System.out.println("Напишите стоимость товара (руб.коп.):");
-            try {
-                cena = scan.nextFloat();
-            } catch (Exception e) {
-                System.out.println("Ошибка: Напишите еще раз");
+           // System.out.println("Напишите стоимость товара (руб.коп.):");
+           // try {
+            //    cena = scan.nextFloat();
+          //  } catch (Exception e) {
+          //      System.out.println("Ошибка: Напишите еще раз");
 
-                }
+                //}
+            calcul = Vvod.proverkaOshibokCena(tovar,calcul);
                 //   if (cena instanceof Float){
                 //     break;
                 //  }else System.out.println("Ошибка неверный ввод, попробуйте еще раз: ");
@@ -77,7 +79,7 @@ public class Calculator {
 
 
              //  if (cena instanceof Float & cena>=0){
-                calcul = calcul + String.format("%s стомистью %.2f рублей.\n", tovar, cena);
+               // calcul = calcul + String.format("%s стомистью %.2f рублей.\n", tovar, cena);
                 System.out.println("Добавленные товары:\n " + calcul);
                 System.out.println("Хотите заказать ещё? тогда напшите любой символ. Напишите: Завершить, если всё заказали");
                 soglasie = scan.next();
