@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        String gostSum="";
 
         System.out.println("На скольких человек необходимо разделить счёт?");
         Scanner scan = new Scanner(System.in);
@@ -18,8 +19,11 @@ public class Main {
                 System.out.println("Ошибка! Неккоректное число, введите еще раз: ");
             }
         }while(!wenttocatch);
-        System.out.println("ПРОШЛО");
+
         // Vvod.proverkaOshibokTovar();
-        Calculator.calculation();
+        Calculator.calculation(number);
+
+
     }
+
 }
