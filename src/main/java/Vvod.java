@@ -1,11 +1,14 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class Vvod {
     public static void main(String[] args) {
+
     }
     public static String proverkaOshibokCena(String tovar,String calcul, String rubli, int number, String soglasie) {
 
         boolean wenttocatch = false;
-        float sum =0.00f;
+        Float sum =0.00f;
         String rubliDlaSum = " ";
         Scanner scan = new Scanner(System.in);
         Float cena = 0.00f;
@@ -17,8 +20,9 @@ public class Vvod {
 
             if (scan.hasNextFloat()) {
                 cena = scan.nextFloat();
+                if (cena>0){
                 wenttocatch = true;
-                sum = sum + cena;
+                sum = sum + cena;}else{System.out.println("Ошибка число меньше либо равно нулю. Введите данные еще раз: ");}
             } else {
                 scan.nextLine();
                 System.out.println("Ошибка! Введите данные формата руб,коп ");
@@ -26,10 +30,18 @@ public class Vvod {
         } while (!wenttocatch);
 
             System.out.println("Напишите название товара:");
-            tovar = scan.next();
+            boolean prov =false;
+
+            while(!prov){
+                tovar = scan.next();
+            if (tovar.matches(".*\\d.*")){
+                System.out.println("Напишите название товара без цифры:");
+            }else prov=true;
+            }
+
         float k=sum/number;
-        rubli =  GetRubleAddition(cena,rubli);
-        rubliDlaSum =  GetRubleAddition(sum,rubli);
+        rubli =  GetRubleAddition(cena);
+        rubliDlaSum =  GetRubleAddition(k);
         if (cena instanceof Float & cena>=0.01f){
 
         calcul = calcul + String.format("%s стомистью %.2f %s.\n", tovar, cena,rubli);
@@ -49,7 +61,7 @@ public class Vvod {
 
        return calcul;
     }
-    public static String GetRubleAddition(float num, String rubli)
+    public static String GetRubleAddition(float num)
     {
         int RublConvert = (int) Math.floor(num);
         var preLastDigit = RublConvert % 100 / 10;
